@@ -1,8 +1,10 @@
-const ProductModel = require('../database/model/productModel');
+const ProductModel = require('../Models/productModel');
 
 // Create a product
 const createProduct = async (req, res) => {
   try {
+    console.log(req.body);
+    // return;
     const product = await ProductModel.create(req.body);
     res.status(201).json({
       response: true,
